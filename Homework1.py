@@ -1,6 +1,7 @@
 # Homework 1
 
 def get_data(string):
+    """Take char string of numbers and convert to integer list of lists."""
     lst = list(string.split(" "))
     ints = []
     for i in lst:
