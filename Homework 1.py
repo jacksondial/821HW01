@@ -1,7 +1,6 @@
 # Homework 1
 
 def get_data(string):
-    """Take char string of numbers and convert to integer list of lists."""
     lst = list(string.split(" "))
     ints = []
     for i in lst:
@@ -9,5 +8,5 @@ def get_data(string):
     return ints
 
 
-str1 = "2 1 0 9 3 2"
+str1 = "2 1 0 9 3"
 print(get_data(str1))
