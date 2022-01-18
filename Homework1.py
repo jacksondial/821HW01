@@ -20,12 +20,8 @@ def get_data(string):
     return final_list
 
 
-<<<<<<< HEAD
-str1 = "2 1 3"
-=======
 str1 = """1 44 31 4 5 6
 21 3 2 13 55 72"""
->>>>>>> 0e69db1bbb61799ba2ea2f9bfce2a00ca9bf1d71
 data1 = get_data(str1)
 
 
@@ -53,11 +49,8 @@ def analyze_data(data, statistic):
 
 print(analyze_data(data1, "average"))
 print(analyze_data(data1, "standard deviation"))
-<<<<<<< HEAD
-=======
 print(analyze_data(data1, "covariance"))
 print(analyze_data(data1, "correlation"))
 # str1 = """2 1 0 9 3 2
 # 4 7 6 1 2 5"""
 # print(get_data(str1))
->>>>>>> 0e69db1bbb61799ba2ea2f9bfce2a00ca9bf1d71
