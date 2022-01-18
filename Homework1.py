@@ -41,11 +41,16 @@ def analyze_data(data, statistic):
     ) / len(data[0])
     if statistic == "covariance":
         return round(covariance, 1)
+    if statistic == "correlation":
+        sd0 = ma.sqrt(sum([(i - avg0) ** 2 for i in data[0]]) / len(data[0]))
+        sd1 = ma.sqrt(sum([(i - avg1) ** 2 for i in data[1]]) / len(data[1]))
+        return round(covariance / (sd0 * sd1), 3)
 
 
 print(analyze_data(data1, "average"))
 print(analyze_data(data1, "standard deviation"))
 print(analyze_data(data1, "covariance"))
+print(analyze_data(data1, "correlation"))
 # str1 = """2 1 0 9 3 2
 # 4 7 6 1 2 5"""
 # print(get_data(str1))
