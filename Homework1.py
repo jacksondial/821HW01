@@ -13,10 +13,6 @@ def get_data(string):
             ints.append(int(j))
         final_list.append(ints)
 
-    # lst = list(string.split(" "))
-    # ints = []
-    # for i in lst:
-    #     ints.append(int(i))
     return final_list
 
 
@@ -51,6 +47,3 @@ print(analyze_data(data1, "average"))
 print(analyze_data(data1, "standard deviation"))
 print(analyze_data(data1, "covariance"))
 print(analyze_data(data1, "correlation"))
-# str1 = """2 1 0 9 3 2
-# 4 7 6 1 2 5"""
-# print(get_data(str1))
