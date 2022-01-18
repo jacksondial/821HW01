@@ -30,15 +30,22 @@ def analyze_data(data, statistic):
     all_data = [number for lst in data for number in lst]
     average = sum(all_data) / len(all_data)
     if statistic == "average":
-        output = round(average, 1)
+        return round(average, 1)
     if statistic == "standard deviation":
         sd = ma.sqrt(sum([(i - average) ** 2 for i in all_data]) / len(all_data))
-        output = round(sd, 1)
-    return output
+        return round(sd, 1)
+    avg0 = sum(data[0]) / len(data[0])
+    avg1 = sum(data[1]) / len(data[1])
+    covariance = sum(
+        (data[0][i] - avg0) * (data[1][i] - avg1) for i in range(len(data[0]))
+    ) / len(data[0])
+    if statistic == "covariance":
+        return round(covariance, 1)
 
 
 print(analyze_data(data1, "average"))
 print(analyze_data(data1, "standard deviation"))
+print(analyze_data(data1, "covariance"))
 # str1 = """2 1 0 9 3 2
 # 4 7 6 1 2 5"""
 # print(get_data(str1))
