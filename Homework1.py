@@ -38,7 +38,6 @@ def analyze_data(data, statistic):
         return round(covariance / (sd0 * sd1), 3)
 
 
-# filename = "example.txt"
 filename = input("Enter file path here: ")
 with open(filename) as file:
     txt = file.read()
