@@ -16,11 +16,6 @@ def get_data(string):
     return final_list
 
 
-str1 = """1 44 31 4 5 6
-21 3 2 13 55 72"""
-data1 = get_data(str1)
-
-
 def analyze_data(data, statistic):
     """Take list of lists and outputs statistic about data."""
     all_data = [number for lst in data for number in lst]
@@ -43,6 +38,12 @@ def analyze_data(data, statistic):
         return round(covariance / (sd0 * sd1), 3)
 
 
+# filename = "example.txt"
+filename = input("Enter file path here: ")
+with open(filename) as file:
+    txt = file.read()
+
+data1 = get_data(txt)
 print(analyze_data(data1, "average"))
 print(analyze_data(data1, "standard deviation"))
 print(analyze_data(data1, "covariance"))
