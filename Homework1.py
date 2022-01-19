@@ -12,12 +12,12 @@ def get_data(string):
         for j in lst:
             ints.append(int(j))
         final_list.append(ints)
-
     return final_list
 
 
 def analyze_data(data, statistic):
     """Take list of lists and outputs statistic about data."""
+    # Put all numbers into one list for average and sd
     all_data = [number for lst in data for number in lst]
     average = sum(all_data) / len(all_data)
     if statistic == "average":
@@ -25,6 +25,7 @@ def analyze_data(data, statistic):
     if statistic == "standard deviation":
         sd = ma.sqrt(sum([(i - average) ** 2 for i in all_data]) / len(all_data))
         return round(sd, 1)
+    # Need individual list averages and covariance for cov and corr
     avg0 = sum(data[0]) / len(data[0])
     avg1 = sum(data[1]) / len(data[1])
     covariance = sum(
@@ -38,6 +39,7 @@ def analyze_data(data, statistic):
         return round(covariance / (sd0 * sd1), 3)
 
 
+# Lets the user input a file path to run functions on data
 filename = input("Enter file path here: ")
 with open(filename) as file:
     txt = file.read()
