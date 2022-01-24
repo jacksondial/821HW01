@@ -40,9 +40,10 @@ def analyze_data(data: list[list[int]], statistic: str) -> float:
         sd1 = ma.sqrt(sum([(i - avg1) ** 2 for i in data[1]]) / len(data[1]))
         return round(covariance / (sd0 * sd1), 3)
     else:
-        return ValueError(f"Unrecognized statistic {statistic}")
+        raise ValueError(f"Unrecognized statistic {statistic}")
 
 
+# if __name__ == "main":
 # Lets the user input a file path to run functions on data
 filename = input("Enter file path here: ")
 with open(filename) as file:
