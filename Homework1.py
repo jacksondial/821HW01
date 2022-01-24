@@ -2,7 +2,7 @@
 import math as ma
 
 
-def get_data(string: str) -> list[list[int], list[int]]:
+def get_data(string: str) -> list[list[int]]:
     """Take char string of numbers and convert to integer list of lists."""
     new_list = list(string.split("\n"))
     final_list = []
@@ -15,7 +15,7 @@ def get_data(string: str) -> list[list[int], list[int]]:
     return final_list
 
 
-def analyze_data(data: list[list[int], list[int]], statistic: str) -> float:
+def analyze_data(data: list[list[int]], statistic: str) -> float:
     """Take list of lists and outputs statistic about data."""
     # Put all numbers into one list for average and sd
     all_data = [number for lst in data for number in lst]
